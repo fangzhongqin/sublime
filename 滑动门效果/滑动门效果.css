@@ -1,0 +1,16 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#container{
+	height:477px;
+	margin:0 auto;
+	overflow: hidden;
+	position: relative;
+	border:1px solid red;
+}
+img{
+	position: absolute;
+	left:0;
+	display: block;
+}

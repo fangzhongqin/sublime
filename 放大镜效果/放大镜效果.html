@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>放大镜</title>
+<link rel="stylesheet" type="text/css" href="放大镜效果.css">
+<script>
+
+        //页面加载完毕后执行
+window.onload = function () {
+
+var objDemo = document.getElementById("demo");
+var objSmallBox = document.getElementById("small-box");
+var objMark = document.getElementById("mark");
+var objFloatBox = document.getElementById("float-box");
+var objBigBox = document.getElementById("big-box");
+var objBigBoxImage = objBigBox.getElementsByTagName("img")[0];
+
+objMark.onmouseover = function () {
+objFloatBox.style.display = "block";
+objBigBox.style.display = "block";
+            }
+
+objMark.onmouseout = function () {
+objFloatBox.style.display = "none";
+objBigBox.style.display = "none";
+            }
+
+objMark.onmousemove = function (ev) {
+
+//算出放大镜左边及上边的位置
+var left=ev.clientX-objDemo.offsetLeft-objSmallBox.offsetLeft-objFloatBox.offsetWidth/2;
+var top=ev.clientY-objDemo.offsetTop-objSmallBox.offsetTop-objFloatBox.offsetHeight/2;
+    
+    if(left<0){
+    	left=0;
+    }
+    else if(left>objMark.offsetWidth-objFloatBox.offsetWidth){
+    	left=objMark.offsetWidth-objFloatBox.offsetWidth;
+    }
+
+    if(top<0){
+        top=0;
+    }
+    else if(top>objMark.offsetHeight-objFloatBox.offsetHeight){
+    	top=objMark.offsetHeight-objFloatBox.offsetHeight;
+    }
+
+    objFloatBox.style.left=left+'px';
+    objFloatBox.style.top=top+'px';
+
+var persentX=left/(objMark.offsetWidth-objFloatBox.offsetWidth) ;
+var persentY=top/(objMark.offsetHeight-objFloatBox.offsetHeight) ;
+
+    objBigBoxImage.style.left=persentX*(objBigBox.offsetWidth-objBigBoxImage.offsetWidth)+'px';
+    objBigBoxImage.style.top=persentY*(objBigBox.offsetHeight-objBigBoxImage.offsetHeight)+'px';
+
+//请补充此处鼠标移动时的响应方法
+            }
+        }
+</script>
+</head>
+<body>
+<div id="demo">
+<div id="small-box">
+<div id="mark"></div>
+<div id="float-box"></div>
+<img src="http://img.mukewang.com/537d77fb0001559d04000255.jpg"/>
+</div>
+<div id="big-box">
+<img src="http://img.mukewang.com/537d781b0001c04210240654.jpg"/>
+</div>
+</div>
+</body>
+</html>
