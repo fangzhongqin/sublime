@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script>
+window.onload=function (){
+	var txt=document.getElementById('txt1');
+	var btn=document.getElementById('btn1');
+	
+	btn.onclick=function(){
+		var oU1=document.getElementById('u1');
+	    var oLi=document.createElement('li');
+		var aLi=document.getElementsByTagName('li');
+    	oU1.insertBefore(oLi,aLi[0]);
+	    oLi.innerHTML=txt.value;
+	}
+}
+</script>
+</head>
+<body>
+	<input id="txt1" type="text">
+	<input id="btn1" type="button" value="提交">
+	<ul id="u1">
+	    
+	</ul>
+
+</body>
+</html>
