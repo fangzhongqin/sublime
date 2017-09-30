@@ -1,0 +1,49 @@
+html,body{
+	height:100%;
+}
+.container{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  border:5px solid;
+}
+
+.head{
+  position:absolute;
+  left:0;
+  right:0;
+  height:100px;
+  background:red;
+  top:0;
+  text-align:center;
+
+}
+.aside{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  background:green;
+  width:200px;
+  vertical-align:center;
+}
+.foot{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:100px;
+  background:yellow;
+  text-align:center;
+}
+.content{
+	position:absolute;
+	left:200px;
+	right:0;
+	top:100px;
+	bottom:100px;
+	background: blue;
+	overflow:auto;
+}

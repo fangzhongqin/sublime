@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>你不知道的JS测试</title>
+	<script type="text/javascript">
+	/*function baz(){
+		console.log("baz");
+		bar();
+	}
+	function bar(){
+		console.log("bar");
+		foo();
+	}
+	function foo(){
+		console.log("foo")
+	}
+	baz();*/
+
+	/*function Person(){}
+	
+	
+
+	Person.prototype={
+		constructor:Person,
+		name:"Nic",
+		age:29,
+		job:"teacher",
+		sayName:function(){
+			alert(this.name);
+		}
+	};
+	var friend=new Person();
+	document.write("bbb")
+	friend.sayName();
+	document.write("aaa");*/
+	
+	/*(function (){
+		var now=new Date();
+		if(now.getMonth()==0&&now.getDate()==1)
+			{alert("新年快乐！")}
+		else{
+			alert(".....");
+		}
+	})()*/
+
+	/*var singleton=function(){
+		//创建私有变量和私有函数
+		var privateVariable=10;
+		function privateFunction(){
+			return false;
+		}
+    //创建对象
+    var object=new Date();
+
+    //添加特权／共有属性和方法
+    object.publicProperty=true;
+    object.publicMethod=function(){
+    	privatevariable++;
+    	return privateFunction()
+    };
+    return object;
+	}();*/
+
+	//this的隐式绑定
+	function foo(){
+		console.log(this.a);
+	}
+	var obj2={
+		a:42,
+		foo:foo,
+	};
+    var obj1={
+    	a:2,
+    	obj2:obj2,
+    };
+    obj1.obj2.foo();
+    obj2.foo();
+</script>
+</head>
+<body>
+<div>测试</div>
+
+</body>
+</html>
